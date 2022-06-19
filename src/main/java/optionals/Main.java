@@ -15,8 +15,12 @@ public class Main {
 //                .orElseThrow(exception);
 //        System.out.println(value); //exception
 
-        Optional.ofNullable("jhon@gmail.com")
-                .ifPresent(email -> System.out.println("Sending email to " + email));//Sending email to jhon@gmail.com
+//        Optional.ofNullable("jhon@gmail.com")
+//                .ifPresent(email -> System.out.println("Sending email to " + email));//Sending email to jhon@gmail.com
+
+        Optional.ofNullable(null)
+                .ifPresentOrElse(email -> System.out.println("Sending email to " + email),
+                        ()-> System.out.println("Can not send email"));//Can not send email
 
         
     }
